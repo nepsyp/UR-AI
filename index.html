@@ -3,93 +3,242 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UR AI - Future of Intelligence</title>
+<title>NEXMIND AI</title>
+
 <style>
-* { box-sizing:border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  margin:0;
-  font-family:Arial,sans-serif;
-  color:white;
-  background:linear-gradient(135deg,#080b20,#171044,#071b35);
-  min-height:100vh;
+  font-family: Arial, sans-serif;
+  background: #080d1b;
+  color: white;
+  min-height: 100vh;
 }
+
 header {
-  padding:24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #202b43;
 }
-.logo {font-size:26px;font-weight:bold;color:#8d9cff;}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #65a5ff;
+}
+
+.premium {
+  background: linear-gradient(90deg,#7655ff,#168bff);
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 20px;
+}
+
+main {
+  max-width: 700px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
 .hero {
-  text-align:center;
-  padding:90px 20px 40px;
+  text-align: center;
+  margin: 35px 0;
 }
-h1 {font-size:clamp(38px,8vw,65px);}
-h1 span {color:#9a8cff;}
-p {color:#c4c5df;line-height:1.7;}
-button {
-  padding:15px 28px;
-  border:0;
-  border-radius:30px;
-  background:#8170ff;
-  color:white;
-  font-size:16px;
-  cursor:pointer;
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
 }
-.cards {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:18px;
-  padding:25px;
-  max-width:1000px;
-  margin:auto;
+
+.hero span {
+  color: #6eaaff;
 }
-.card {
-  padding:28px;
-  border:1px solid #55518b;
-  border-radius:20px;
-  background:#ffffff12;
-  transition:.3s;
+
+.hero p {
+  color: #aab5cb;
+  line-height: 1.6;
 }
-.card:hover {transform:translateY(-8px);}
-.card h2 {color:#a99cff;}
-footer {text-align:center;padding:35px;color:#aaa;}
+
+.search {
+  display: flex;
+  gap: 8px;
+  margin: 25px 0;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid #293653;
+  border-radius: 12px;
+  background: #121c30;
+  color: white;
+  outline: none;
+}
+
+.search button {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #397fff;
+  color: white;
+}
+
+h2 {
+  font-size: 19px;
+  margin: 25px 0 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 13px;
+}
+
+.tool {
+  background: #121c30;
+  border: 1px solid #263652;
+  padding: 20px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.tool:active {
+  transform: scale(.97);
+}
+
+.tool .icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.tool h3 {
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+
+.tool p {
+  color: #aab5cb;
+  font-size: 12px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  color: #8491a8;
+  font-size: 12px;
+}
+
+#message {
+  color: #8bbcff;
+  text-align: center;
+  margin-top: 15px;
+}
 </style>
 </head>
+
 <body>
+
 <header>
-  <div class="logo">✦ UR AI</div>
-  <div>Future is Here</div>
+  <div class="logo">NEXMIND AI</div>
+  <button class="premium" onclick="premium()">✦ Premium</button>
 </header>
 
+<main>
+
 <section class="hero">
-  <p>WELCOME TO THE FUTURE</p>
-  <h1>Imagine More.<br><span>Create Anything.</span></h1>
-  <p>Your next-generation AI creative universe.</p>
-  <button onclick="alert('Welcome to UR AI!')">
-    Explore UR AI →
-  </button>
+  <h1>Welcome to <span>NEXMIND</span></h1>
+  <p>Your All-in-One AI Assistant.<br>
+  What would you like to create today?</p>
 </section>
 
-<section class="cards">
-  <div class="card">
-    <h2>🤖 AI Chat</h2>
-    <p>Talk, learn and discover new ideas.</p>
-  </div>
-  <div class="card">
-    <h2>🎨 AI Image</h2>
-    <p>Turn your imagination into art.</p>
-  </div>
-  <div class="card">
-    <h2>✍️ AI Writer</h2>
-    <p>Create amazing content with AI.</p>
-  </div>
-  <div class="card">
-    <h2>🎬 AI Video</h2>
-    <p>Explore a new world of creativity.</p>
-  </div>
-</section>
+<div class="search">
+  <input id="prompt" type="text"
+  placeholder="Ask NEXMIND anything...">
+  <button onclick="askAI()">➤</button>
+</div>
 
-<footer>© 2026 UR AI | Built for the Future</footer>
+<p id="message"></p>
+
+<h2>Explore AI Tools</h2>
+
+<div class="grid">
+
+  <div class="tool" onclick="openTool('AI Chat')">
+    <div class="icon">💬</div>
+    <h3>AI Chat</h3>
+    <p>Ask anything with AI</p>
+  </div>
+
+  <div class="tool" onclick="openTool('AI Image')">
+    <div class="icon">🎨</div>
+    <h3>AI Image</h3>
+    <p>Create amazing images</p>
+  </div>
+
+  <div class="tool" onclick="openTool('AI Video')">
+    <div class="icon">🎬</div>
+    <h3>AI Video</h3>
+    <p>Generate creative videos</p>
+  </div>
+
+  <div class="tool" onclick="openTool('AI Voice')">
+    <div class="icon">🎙️</div>
+    <h3>AI Voice</h3>
+    <p>AI voice generation</p>
+  </div>
+
+  <div class="tool" onclick="openTool('AI Writing')">
+    <div class="icon">✍️</div>
+    <h3>AI Writing</h3>
+    <p>Write anything easily</p>
+  </div>
+
+  <div class="tool" onclick="openTool('AI Translator')">
+    <div class="icon">🌐</div>
+    <h3>AI Translator</h3>
+    <p>Translate any language</p>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  © 2026 NEXMIND AI. All rights reserved.
+</footer>
+
+<script>
+function askAI() {
+  const prompt = document.getElementById("prompt").value.trim();
+
+  if (!prompt) {
+    document.getElementById("message").innerText =
+      "Please enter your question!";
+    return;
+  }
+
+  document.getElementById("message").innerText =
+    "AI Chat will be connected soon!";
+}
+
+function openTool(name) {
+  document.getElementById("message").innerText =
+    name + " will be available soon!";
+}
+
+function premium() {
+  document.getElementById("message").innerText =
+    "NEXMIND Premium is coming soon!";
+}
+</script>
+
 </body>
 </html>
