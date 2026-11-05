@@ -1,244 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXMIND AI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>araa</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #080d1b;
-  color: white;
-  min-height: 100vh;
-}
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      background: linear-gradient(135deg, #101426, #252044, #101426);
+      font-family: Arial, sans-serif;
+      color: white;
+    }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid #202b43;
-}
+    .container {
+      width: 100%;
+      max-width: 650px;
+      text-align: center;
+      padding: 45px 25px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.07);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    }
 
-.logo {
-  font-size: 25px;
-  font-weight: bold;
-  color: #65a5ff;
-}
+    .logo {
+      font-size: 38px;
+      font-weight: bold;
+      letter-spacing: 5px;
+      margin-bottom: 35px;
+      color: #b8a5ff;
+    }
 
-.premium {
-  background: linear-gradient(90deg,#7655ff,#168bff);
-  border: none;
-  padding: 10px 15px;
-  color: white;
-  border-radius: 20px;
-}
+    .bengali {
+      font-size: 24px;
+      line-height: 1.9;
+      margin-bottom: 25px;
+    }
 
-main {
-  max-width: 700px;
-  margin: auto;
-  padding: 25px 18px;
-}
+    .english {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #c8c5d8;
+    }
 
-.hero {
-  text-align: center;
-  margin: 35px 0;
-}
+    .line {
+      width: 65px;
+      height: 3px;
+      background: #a78bfa;
+      margin: 25px auto;
+      border-radius: 10px;
+    }
 
-.hero h1 {
-  font-size: 32px;
-  margin-bottom: 12px;
-}
-
-.hero span {
-  color: #6eaaff;
-}
-
-.hero p {
-  color: #aab5cb;
-  line-height: 1.6;
-}
-
-.search {
-  display: flex;
-  gap: 8px;
-  margin: 25px 0;
-}
-
-.search input {
-  flex: 1;
-  min-width: 0;
-  padding: 15px;
-  border: 1px solid #293653;
-  border-radius: 12px;
-  background: #121c30;
-  color: white;
-  outline: none;
-}
-
-.search button {
-  padding: 12px;
-  border: none;
-  border-radius: 12px;
-  background: #397fff;
-  color: white;
-}
-
-h2 {
-  font-size: 19px;
-  margin: 25px 0 15px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 13px;
-}
-
-.tool {
-  background: #121c30;
-  border: 1px solid #263652;
-  padding: 20px 15px;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.tool:active {
-  transform: scale(.97);
-}
-
-.tool .icon {
-  font-size: 28px;
-  margin-bottom: 12px;
-}
-
-.tool h3 {
-  font-size: 16px;
-  margin-bottom: 7px;
-}
-
-.tool p {
-  color: #aab5cb;
-  font-size: 12px;
-}
-
-footer {
-  text-align: center;
-  padding: 30px 10px;
-  color: #8491a8;
-  font-size: 12px;
-}
-
-#message {
-  color: #8bbcff;
-  text-align: center;
-  margin-top: 15px;
-}
-</style>
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #88849e;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">NEXMIND AI</div>
-  <button class="premium" onclick="premium()">✦ Premium</button>
-</header>
+  <main class="container">
 
-<main>
+    <div class="logo">araa</div>
 
-<section class="hero">
-  <h1>Welcome to <span>NEXMIND</span></h1>
-  <p>Your All-in-One AI Assistant.<br>
-  What would you like to create today?</p>
-</section>
+    <p class="bengali">
+      এই কাজটি করা আমার ধর্মের বিপক্ষে,
+      তাই আমি এটি বন্ধ করে দিচ্ছি।
+    </p>
 
-<div class="search">
-  <input id="prompt" type="text"
-  placeholder="Ask NEXMIND anything...">
-  <button onclick="askAI()">➤</button>
-</div>
+    <div class="line"></div>
 
-<p id="message"></p>
+    <p class="english">
+      Doing this goes against my religion,
+      so I am shutting it down.
+    </p>
 
-<h2>Explore AI Tools</h2>
+    <footer>
+      araa © 2026
+    </footer>
 
-<div class="grid">
-
-  <div class="tool" onclick="openTool('AI Chat')">
-    <div class="icon">💬</div>
-    <h3>AI Chat</h3>
-    <p>Ask anything with AI</p>
-  </div>
-
-  <div class="tool" onclick="openTool('AI Image')">
-    <div class="icon">🎨</div>
-    <h3>AI Image</h3>
-    <p>Create amazing images</p>
-  </div>
-
-  <div class="tool" onclick="openTool('AI Video')">
-    <div class="icon">🎬</div>
-    <h3>AI Video</h3>
-    <p>Generate creative videos</p>
-  </div>
-
-  <div class="tool" onclick="openTool('AI Voice')">
-    <div class="icon">🎙️</div>
-    <h3>AI Voice</h3>
-    <p>AI voice generation</p>
-  </div>
-
-  <div class="tool" onclick="openTool('AI Writing')">
-    <div class="icon">✍️</div>
-    <h3>AI Writing</h3>
-    <p>Write anything easily</p>
-  </div>
-
-  <div class="tool" onclick="openTool('AI Translator')">
-    <div class="icon">🌐</div>
-    <h3>AI Translator</h3>
-    <p>Translate any language</p>
-  </div>
-
-</div>
-</main>
-
-<footer>
-  © 2026 NEXMIND AI. All rights reserved.
-</footer>
-
-<script>
-function askAI() {
-  const prompt = document.getElementById("prompt").value.trim();
-
-  if (!prompt) {
-    document.getElementById("message").innerText =
-      "Please enter your question!";
-    return;
-  }
-
-  document.getElementById("message").innerText =
-    "AI Chat will be connected soon!";
-}
-
-function openTool(name) {
-  document.getElementById("message").innerText =
-    name + " will be available soon!";
-}
-
-function premium() {
-  document.getElementById("message").innerText =
-    "NEXMIND Premium is coming soon!";
-}
-</script>
+  </main>
 
 </body>
 </html>
